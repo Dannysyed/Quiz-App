@@ -31,7 +31,7 @@ class _QuizState extends State<Quiz> {
     if (answerSelected.length == questions.length) {
       setState(() {
         activeScreen = "Final-Screen";
-        answerSelected = [];
+        // answerSelected = [];
       });
     }
   }
