@@ -24,7 +24,12 @@ class FinalScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(getSummaryData());
+    final totalAnswers = questions.length;
+    final summaryData = getSummaryData();
+    final totalAnswerUser = summaryData.where((data) {
+      return data['user_answer'] == data['correct_answer'];
+    }).length;
+
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -36,7 +41,7 @@ class FinalScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            const Text('You answered x out of y'),
+            Text('You answered $totalAnswerUser out of $totalAnswers'),
             const SizedBox(
               height: 30,
             ),
